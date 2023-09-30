@@ -1,0 +1,10 @@
+#!/bin/bash
+
+time=$1
+
+if expr "$time" : "[0-9]*$" >&/dev/null; then
+    echo "$time sec timer in Progress"
+    sleep $time && afplay src/jingle.wav
+else
+    echo "need to specify number"
+fi
